@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://8gipcpubw6e6"]
+
+[ext_resource type="Script" uid="uid://da0xnfi2i7ixy" path="res://src/module/module.gd" id="1_qnjlk"]
+[ext_resource type="Script" uid="uid://dotsatbfctanc" path="res://src/audio/scene_music.gd" id="2_jhw8o"]
+[ext_resource type="Texture2D" uid="uid://b80nh1iu128sd" path="res://icon.svg" id="2_s6lek"]
+[ext_resource type="Theme" uid="uid://d0a3gnjaubqx" path="res://resources/graphics/themes/main-theme/main_ui_theme.tres" id="3_l80un"]
+[ext_resource type="Script" uid="uid://tyug5shtd20o" path="res://src/in-game-ui/in_game_ui_controller.gd" id="3_xptat"]
+[ext_resource type="Texture2D" uid="uid://h1r8bdmg0at2" path="res://resources/icons/pause.png" id="4_xptat"]
+[ext_resource type="Script" uid="uid://dpo0qgibgkc13" path="res://src/in-game-ui/game_paused_ui_controller.gd" id="6_yarin"]
+
+[sub_resource type="Animation" id="Animation_s6lek"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kgj8g"]
+resource_name = "movement"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-250, 0), Vector2(0, 0), Vector2(250, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l80un"]
+_data = {
+&"RESET": SubResource("Animation_s6lek"),
+&"movement": SubResource("Animation_kgj8g")
+}
+
+[node name="Game" type="Node2D" unique_id=846217353]
+script = ExtResource("1_qnjlk")
+metadata/_custom_type_script = "uid://da0xnfi2i7ixy"
+
+[node name="SceneMusic" type="Node" parent="." unique_id=1923907409]
+script = ExtResource("2_jhw8o")
+metadata/_custom_type_script = "uid://dotsatbfctanc"
+
+[node name="world" type="Node2D" parent="." unique_id=696585772]
+
+[node name="Camera2D" type="Camera2D" parent="world" unique_id=1415216061]
+
+[node name="Sprite2D" type="Sprite2D" parent="world/Camera2D" unique_id=1768625628]
+texture = ExtResource("2_s6lek")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="world/Camera2D/Sprite2D" unique_id=1502491521]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_l80un")
+autoplay = &"movement"
+
+[node name="InGameUIController" type="CanvasLayer" parent="." unique_id=741749158]
+script = ExtResource("3_xptat")
+metadata/_custom_type_script = "uid://tyug5shtd20o"
+
+[node name="Control" type="Control" parent="InGameUIController" unique_id=1902612887]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_l80un")
+
+[node name="PauseButton" type="Button" parent="InGameUIController/Control" unique_id=1327372215]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 78.0
+offset_bottom = 78.0
+icon = ExtResource("4_xptat")
+
+[node name="GamePausedController" type="CanvasLayer" parent="." unique_id=716181639]
+script = ExtResource("6_yarin")
+metadata/_custom_type_script = "uid://dpo0qgibgkc13"
+
+[node name="Control" type="Control" parent="GamePausedController" unique_id=1555826084]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_l80un")
+
+[node name="ColorRect" type="ColorRect" parent="GamePausedController/Control" unique_id=682310934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7372549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GamePausedController/Control" unique_id=848004271]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GamePausedController/Control/VBoxContainer" unique_id=1407848683]
+layout_mode = 2
+theme = ExtResource("3_l80un")
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Title" type="Label" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=1477110227]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Body" type="HBoxContainer" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=1594649016]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Labels" type="VBoxContainer" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body" unique_id=1525180217]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Labels" unique_id=140048174]
+layout_mode = 2
+text = "Fullscreen:"
+
+[node name="Label2" type="Label" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Labels" unique_id=1949200948]
+layout_mode = 2
+text = "Music volume: "
+
+[node name="Label3" type="Label" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Labels" unique_id=644994485]
+layout_mode = 2
+text = "Sfx volume: "
+
+[node name="Fields" type="VBoxContainer" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body" unique_id=595969019]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Fullscreen" type="CheckBox" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Fields" unique_id=178649878]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="MusicVolume" type="HSlider" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Fields" unique_id=235828425]
+layout_mode = 2
+size_flags_vertical = 10
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="SfxVolume" type="HSlider" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Fields" unique_id=727140060]
+layout_mode = 2
+size_flags_vertical = 10
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="Continue" type="Button" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=229832486]
+layout_mode = 2
+text = "Continue"
+
+[node name="MainMenu" type="Button" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=1423964810]
+layout_mode = 2
+text = "Main menu"

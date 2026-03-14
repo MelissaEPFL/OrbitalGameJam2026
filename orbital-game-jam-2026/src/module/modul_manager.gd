@@ -1,0 +1,48 @@
+class_name ModulManager extends Node
+
+signal on_module_change
+
+@export var inital_module: ModuleInfo
+@export var modules: Array[ModuleInfo] = []
+
+@onready var module_root = $ModuleRoot
+
+static var singleton: ModulManager
+
+var _module_mapping: Dictionary[String, ModuleInfo]
+var _current_module: Node
+var _current_module_id: String
+
+func _ready() -> void:
+	_module_mapping = {}
+	initialize_module_mapping()
+	load_module(inital_module.id)
+	on_module_change.emit(inital_module.id)
+	singleton = self
+	
+func initialize_module_mapping() -> void:
+	for m in modules:
+		_module_mapping.set(m.id, m)
+
+func load_module(module_id: String) -> void:
+	if !_module_mapping.has(module_id):
+		Debug.warn("valid module-id's: " + str(_module_mapping.keys()))
+		Debug.error("module [" + module_id + "] does not exist")
+	else:
+		unload_current_module()
+		_instantiate_module(module_id)
+
+func unload_current_module() -> void:
+	if _current_module:
+		_current_module.unload()
+		
+func _instantiate_module(module_id: String) -> void:
+	var new_module = (_module_mapping.get(module_id) as ModuleInfo).scene.instantiate()
+	if !new_module is Module and !new_module is Module3d:
+		Debug.warn(module_id + ": has no attached Module script!")
+	
+	module_root.add_child(new_module)
+	_current_module = new_module
+	_current_module_id = module_id
+	
+	on_module_change.emit(module_id)

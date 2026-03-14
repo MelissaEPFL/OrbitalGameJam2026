@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b3ni2gn6eo833"]
 
-[ext_resource type="Script" uid="uid://spogwu5jc71p" path="res://Character/player_controller.gd" id="1_60gpb"]
-[ext_resource type="Script" uid="uid://josc06anji0a" path="res://Character/camera_3d.gd" id="2_q7fk2"]
+[ext_resource type="Script" uid="uid://bmrhe4n5tcshm" path="res://Character/kiwi_ball_exporter.gd" id="1_gg6mq"]
+[ext_resource type="Script" uid="uid://spogwu5jc71p" path="res://Character/player_controller.gd" id="2_kd4si"]
+[ext_resource type="Script" uid="uid://josc06anji0a" path="res://Character/camera_3d.gd" id="3_pfjbn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q7fk2"]
 friction = 0.1
@@ -12,11 +13,12 @@ bounce = 0.5
 [sub_resource type="SphereMesh" id="SphereMesh_60gpb"]
 
 [node name="KiwiBall" type="Node3D" unique_id=355434633]
+script = ExtResource("1_gg6mq")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=137959995]
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_q7fk2")
-script = ExtResource("1_60gpb")
+script = ExtResource("2_kd4si")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1188699315]
 shape = SubResource("SphereShape3D_gg6mq")
@@ -28,6 +30,6 @@ mesh = SubResource("SphereMesh_60gpb")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1528207547 node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 0.7470909, 0.664722, 0, -0.664722, 0.7470909, 0, 1.349545, 1.9490938)
 current = true
-script = ExtResource("2_q7fk2")
+script = ExtResource("3_pfjbn")
 target = NodePath("../RigidBody3D")
 offset = Vector3(2, 2, -3)
