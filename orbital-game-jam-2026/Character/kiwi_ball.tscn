@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bmrhe4n5tcshm" path="res://Character/kiwi_ball_exporter.gd" id="1_gg6mq"]
 [ext_resource type="Script" uid="uid://spogwu5jc71p" path="res://Character/player_controller.gd" id="2_kd4si"]
 [ext_resource type="Script" uid="uid://josc06anji0a" path="res://Character/camera_3d.gd" id="3_pfjbn"]
+[ext_resource type="PackedScene" uid="uid://d0hwmjc5n33bk" path="res://Character/kiwi_texture.tscn" id="4_pfjbn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q7fk2"]
 friction = 0.1

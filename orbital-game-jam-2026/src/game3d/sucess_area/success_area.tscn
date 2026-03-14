@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cs4f2lgh7mgbu"]
+
+[ext_resource type="Script" uid="uid://c53k100n25ltd" path="res://src/game3d/sucess_area/success_node_3d.gd" id="1_ftern"]
+
+[node name="SuccessArea" type="Node3D" unique_id=532668572]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1009477399]
+script = ExtResource("1_ftern")
