@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d0hwmjc5n33bk"]
+
+[ext_resource type="PackedScene" uid="uid://bckuain5eq5xs" path="res://Character/kiwi-simplem.glb" id="1_b12tl"]
+[ext_resource type="Script" uid="uid://byhbvbkfssafq" path="res://Character/kiwi_inflate.gd" id="2_qfdkb"]
+
+[node name="kiwi-simplem" unique_id=1998204434 instance=ExtResource("1_b12tl")]
+
+[node name="Sphere" parent="." index="0" unique_id=1908459]
+script = ExtResource("2_qfdkb")

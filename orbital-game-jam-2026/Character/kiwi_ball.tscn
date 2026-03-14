@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" uid="uid://spogwu5jc71p" path="res://Character/player_controller.gd" id="1_60gpb"]
 [ext_resource type="Script" uid="uid://josc06anji0a" path="res://Character/camera_3d.gd" id="2_q7fk2"]
+[ext_resource type="PackedScene" uid="uid://d0hwmjc5n33bk" path="res://Character/kiwi_texture.tscn" id="4_pfjbn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q7fk2"]
 friction = 0.1
 bounce = 0.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gg6mq"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_60gpb"]
 
 [node name="KiwiBall" type="Node3D" unique_id=355434633]
 
@@ -22,8 +21,8 @@ script = ExtResource("1_60gpb")
 shape = SubResource("SphereShape3D_gg6mq")
 debug_color = Color(17.835724, 0, 16.215857, 1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=100377519]
-mesh = SubResource("SphereMesh_60gpb")
+[node name="kiwi-simplem" parent="RigidBody3D" unique_id=1998204434 instance=ExtResource("4_pfjbn")]
+transform = Transform3D(-0.25, 0, 2.1855694e-08, 0, 0.25, 0, -2.1855694e-08, 0, -0.25, 0, 0.13634282, -0.1538351)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1528207547 node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 0.7470909, 0.664722, 0, -0.664722, 0.7470909, 0, 1.349545, 1.9490938)
