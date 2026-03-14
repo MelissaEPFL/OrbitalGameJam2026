@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_38hw8")
-label = "Music"
-value = "HaelDB"
-link = "https://opengameart.org/users/haeldb"
+label = "Idea Curser Archwizard"
+value = "Romain Mendez"
+link = "https://github.com/RomainMendez"
 metadata/_custom_type_script = "uid://cm6x2kltvah6f"

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_f0jcp")
-label = "Icons"
-value = "Kenney"
-link = "https://opengameart.org/content/game-icons"
+label = "Space Program CEO"
+value = "Melissa Faggella"
+link = "https://github.com/MelissaEPFL"
 metadata/_custom_type_script = "uid://cm6x2kltvah6f"

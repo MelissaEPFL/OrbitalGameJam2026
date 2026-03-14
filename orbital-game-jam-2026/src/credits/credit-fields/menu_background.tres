@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_xjl6l")
-label = "menu image"
-value = "ansimuz"
-link = "https://opengameart.org/content/mountain-at-dusk-background"
+label = "Space Program CEO"
+value = "Melissa Faggella"
+link = "https://github.com/MelissaEPFL"
 metadata/_custom_type_script = "uid://cm6x2kltvah6f"
