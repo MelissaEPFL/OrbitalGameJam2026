@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://bbwbygqpg0fdq"]
+
+[ext_resource type="Script" uid="uid://da0xnfi2i7ixy" path="res://src/module/module.gd" id="1_3mb8q"]
+[ext_resource type="PackedScene" uid="uid://dp83k3rrysogj" path="res://src/ui/menu-background/menu_background.tscn" id="2_6egru"]
+[ext_resource type="Theme" uid="uid://d0a3gnjaubqx" path="res://resources/graphics/themes/main-theme/main_ui_theme.tres" id="2_gs0nq"]
+[ext_resource type="Script" uid="uid://dxe0vn5mloagj" path="res://src/main-menu/main_menu_controller.gd" id="2_qp1v6"]
+[ext_resource type="Script" uid="uid://dotsatbfctanc" path="res://src/audio/scene_music.gd" id="2_ytjsf"]
+[ext_resource type="Texture2D" uid="uid://btyhwejga7fl1" path="res://resources/graphics/logos/studio_logo.png" id="5_ytjsf"]
+
+[node name="MainMenu" type="Node2D" unique_id=2143474246]
+script = ExtResource("1_3mb8q")
+metadata/_custom_type_script = "uid://da0xnfi2i7ixy"
+
+[node name="SceneMusic" type="Node" parent="." unique_id=715919493]
+script = ExtResource("2_ytjsf")
+music_id = "MainMenu"
+metadata/_custom_type_script = "uid://dotsatbfctanc"
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=482831599]
+
+[node name="MainMenuBackground" parent="ui" unique_id=2131962927 instance=ExtResource("2_6egru")]
+
+[node name="Root" type="Control" parent="ui" unique_id=1000181847]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_gs0nq")
+
+[node name="Label" type="Label" parent="ui/Root" unique_id=14595686]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 178.0
+offset_top = -93.0
+offset_right = 494.0
+offset_bottom = -60.99994
+grow_horizontal = 2
+grow_vertical = 0
+text = " made by TMB productions"
+
+[node name="Saturn91_dev" type="TextureRect" parent="ui/Root" unique_id=50605349]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 265.0
+offset_top = 91.0
+offset_right = 415.0
+offset_bottom = 260.73682
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ytjsf")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="ui/Root" unique_id=673355598]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="ui/Root/Control" unique_id=235299073]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = -228.0
+offset_right = 220.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 46
+text = "Bounce Me To The Moon"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="ui/Root/Control" unique_id=484515793]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -150.0
+offset_right = 84.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.16580628
+text = "flying is lame"
+horizontal_alignment = 1
+
+[node name="MainControls" type="VBoxContainer" parent="ui/Root/Control" unique_id=602392729]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -89.0
+offset_right = 125.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("2_qp1v6")
+
+[node name="PlayButton" type="Button" parent="ui/Root/Control/MainControls" unique_id=651405487]
+texture_filter = 1
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="ui/Root/Control/MainControls" unique_id=480761276]
+layout_mode = 2
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="ui/Root/Control/MainControls" unique_id=1423355700]
+layout_mode = 2
+text = "Credits"
+
+[node name="CloseButton" type="Button" parent="ui/Root/Control/MainControls" unique_id=384248036]
+layout_mode = 2
+text = "Close"

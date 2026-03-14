@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b80nh1iu128sd"
-path.s3tc="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
-path.etc2="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"
+uid="uid://btyhwejga7fl1"
+path.s3tc="res://.godot/imported/studio_logo.png-1dfb57f1d4c2ada49df544e594a12e45.s3tc.ctex"
+path.etc2="res://.godot/imported/studio_logo.png-1dfb57f1d4c2ada49df544e594a12e45.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex", "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"]
+source_file="res://resources/graphics/logos/studio_logo.png"
+dest_files=["res://.godot/imported/studio_logo.png-1dfb57f1d4c2ada49df544e594a12e45.s3tc.ctex", "res://.godot/imported/studio_logo.png-1dfb57f1d4c2ada49df544e594a12e45.etc2.ctex"]
 
 [params]
 
@@ -40,6 +40,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
