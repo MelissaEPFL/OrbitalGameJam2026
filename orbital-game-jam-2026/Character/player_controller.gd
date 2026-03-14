@@ -7,7 +7,7 @@ var bounciness = 20.0
 func _physics_process(delta):
 	
 	# Control Left/right only
-	var dir_x = Input.get_axis("ui_left", "ui_right")
+	var dir_x = Input.get_axis("ui_right", "ui_left")
 	linear_velocity.x = dir_x * speed
 	
 	#Control elasticity
