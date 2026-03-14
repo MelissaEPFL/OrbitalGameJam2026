@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://b0qet46itky0d" path="res://src/game3d/elasticity_display.gd" id="4_u4neb"]
 [ext_resource type="ArrayMesh" uid="uid://cunmx73e56o0q" path="res://Assets/pente-test-1.obj" id="5_u4neb"]
 [ext_resource type="Script" uid="uid://bg68v8ap5va60" path="res://src/in-game-ui/hud_controller.gd" id="7_gb3wb"]
+[ext_resource type="PackedScene" uid="uid://cs4f2lgh7mgbu" path="res://src/game3d/sucess_area/success_area.tscn" id="7_su3uc"]
 [ext_resource type="Script" uid="uid://cmodcxa18j7ps" path="res://src/game3d/time_display.gd" id="8_pgxoy"]
+[ext_resource type="Script" uid="uid://c5ut21h627lm2" path="res://src/game3d/success_control.gd" id="8_u8t0b"]
 
 [sub_resource type="Environment" id="Environment_su3uc"]
 ambient_light_source = 2
@@ -77,6 +79,12 @@ mesh = ExtResource("5_u4neb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/PenteTest/StaticBody3D" unique_id=1850878621]
 shape = SubResource("ConcavePolygonShape3D_u8t0b")
+
+[node name="SuccessArea" parent="world" unique_id=532668572 instance=ExtResource("7_su3uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73440933, -10.856298, 31.484024)
+
+[node name="SuccessControl" type="Node" parent="world" unique_id=1560993560]
+script = ExtResource("8_u8t0b")
 
 [node name="InGameUIController" type="CanvasLayer" parent="." unique_id=1554391937]
 script = ExtResource("1_xypr8")
@@ -198,3 +206,5 @@ text = "Continue"
 [node name="MainMenu" type="Button" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=2095956134]
 layout_mode = 2
 text = "Main menu"
+
+[connection signal="player_won" from="world/SuccessArea" to="world/SuccessControl" method="on_success"]

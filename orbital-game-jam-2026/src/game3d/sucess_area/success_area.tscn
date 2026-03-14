@@ -1,8 +1,35 @@
 [gd_scene format=3 uid="uid://cs4f2lgh7mgbu"]
 
-[ext_resource type="Script" uid="uid://c53k100n25ltd" path="res://src/game3d/sucess_area/success_node_3d.gd" id="1_ftern"]
+[ext_resource type="Script" uid="uid://bvicyasmkn1y4" path="res://src/game3d/sucess_area/success_area.gd" id="1_sa001"]
+
+[sub_resource type="Shader" id="Shader_green_ring"]
+code = "shader_type spatial;\nrender_mode unshaded, cull_disabled;\n\n// Green dashed ring: UV.x runs 0..1 around the major circumference.\nuniform vec4 color : source_color = vec4(0.1, 1.0, 0.3, 1.0);\nuniform float dash_count : hint_range(4.0, 32.0) = 12.0;\nuniform float dash_fill : hint_range(0.1, 0.95) = 0.6;\nuniform float glow_strength : hint_range(0.0, 5.0) = 2.0;\n\nvoid fragment() {\n\tfloat t = fract(UV.x * dash_count);\n\tif (t > dash_fill) {\n\t\tdiscard;\n\t}\n\tALBEDO = color.rgb;\n\t// Gentle pulsing glow\n\tEMISSION = color.rgb * glow_strength * (0.7 + 0.3 * sin(TIME * 3.0));\n}\n"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_green_ring"]
+shader = SubResource("Shader_green_ring")
+shader_parameter/color = Color(0.1, 1.0, 0.35, 1)
+shader_parameter/dash_count = 12.0
+shader_parameter/dash_fill = 0.6
+shader_parameter/glow_strength = 2.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_green_ring"]
+material = SubResource("ShaderMaterial_green_ring")
+inner_radius = 0.875
+outer_radius = 1.125
+rings = 64
+ring_segments = 8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_detection"]
+radius = 1.2
+height = 0.5
 
 [node name="SuccessArea" type="Node3D" unique_id=532668572]
+script = ExtResource("1_sa001")
 
-[node name="Node3D" type="Node3D" parent="." unique_id=1009477399]
-script = ExtResource("1_ftern")
+[node name="GreenRing" type="MeshInstance3D" parent="." unique_id=987654321]
+mesh = SubResource("TorusMesh_green_ring")
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=111222333]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=444555666]
+shape = SubResource("CylinderShape3D_detection")
