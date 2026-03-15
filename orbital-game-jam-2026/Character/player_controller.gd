@@ -12,9 +12,9 @@ func _physics_process(delta):
 	
 	#Control elasticity
 	if Input.is_action_pressed("elasticity_up"):
-		elasticity = min(elasticity + 0.5 * delta, 1.0)
+		elasticity = min(elasticity + 1 * delta, 1.0)
 	if Input.is_action_pressed("elasticity_down"):
-		elasticity = max(elasticity - 0.5 * delta, 0.0)
+		elasticity = max(elasticity - 1 * delta, 0.0)
 
 	physics_material_override.bounce = elasticity
 	

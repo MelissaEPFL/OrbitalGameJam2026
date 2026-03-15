@@ -45,14 +45,30 @@ func _process(_delta):
 
 
 func inflate_toward_sphere(original: ArrayMesh, radius: float, t: float) -> ArrayMesh:
-	var mdt = MeshDataTool.new()
-	mdt.create_from_surface(original, 0)
-
-	for i in range(mdt.get_vertex_count()):
-		var vertex = mdt.get_vertex(i)
-		var on_sphere = vertex.normalized() * radius
-		mdt.set_vertex(i, vertex.lerp(on_sphere, t))
-
 	var new_mesh = ArrayMesh.new()
-	mdt.commit_to_surface(new_mesh)
+
+	for surface in range(original.get_surface_count()):
+		var mdt = MeshDataTool.new()
+		mdt.create_from_surface(original, surface)
+
+		# Compute centroid of all vertices
+		var centroid = Vector3.ZERO
+		var count = mdt.get_vertex_count()
+		for i in range(count):
+			centroid += mdt.get_vertex(i)
+		centroid /= count
+
+		# Inflate relative to centroid
+		for i in range(count):
+			var vertex = mdt.get_vertex(i)
+			var from_center = vertex - centroid
+			var on_sphere = centroid + from_center.normalized() * radius
+			mdt.set_vertex(i, vertex.lerp(on_sphere, t))
+
+		mdt.commit_to_surface(new_mesh)
+
+		# Restore material
+		var mat = original.surface_get_material(surface)
+		new_mesh.surface_set_material(surface, mat)
+
 	return new_mesh
