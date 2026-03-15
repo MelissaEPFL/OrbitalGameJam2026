@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://batjp8ux5d7vp" path="res://src/settings-menu/settings_menu.tres" id="6_kmhfv"]
 [ext_resource type="Resource" uid="uid://6uv2sleonprr" path="res://src/credits/credits.tres" id="7_5mrjc"]
 [ext_resource type="Resource" uid="uid://doia7y6nbfc0a" path="res://src/game/game.tres" id="7_rlaii"]
+[ext_resource type="Script" uid="uid://beqptbnj5jdfg" path="res://src/module/global_time_display.gd" id="20_gtd1s"]
 [ext_resource type="Script" uid="uid://kaqllehf0y7c" path="res://src/audio/global_sound.gd" id="10_e7lu8"]
 [ext_resource type="Theme" uid="uid://bry4peyypr0hh" path="res://resources/graphics/themes/debug_theme.tres" id="10_kqbth"]
 [ext_resource type="AudioStream" uid="uid://thl7i6uugsy" path="res://resources/audio/sfx/plop.wav" id="10_tb146"]
@@ -29,6 +30,9 @@ script = ExtResource("3_okx7f")
 
 [node name="MainMenu" type="AudioStreamPlayer" parent="GlobalMusic" unique_id=1574602383]
 stream = ExtResource("13_okx7f")
+
+[node name="GlobalTimeDisplay" type="Node" parent="." unique_id=987654321]
+script = ExtResource("20_gtd1s")
 
 [node name="GlobalSound" type="Node" parent="." unique_id=613539388]
 script = ExtResource("10_e7lu8")

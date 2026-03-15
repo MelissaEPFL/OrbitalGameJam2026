@@ -1,30 +1,24 @@
-extends RichTextLabel
-
-var elapsed_time: float = 0.0
-var _running: bool = true
+class_name TimeDisplay extends RichTextLabel
 
 func _ready() -> void:
-	elapsed_time = 0.0
-	_running = true
+	GlobalTimeDisplay.singleton.reinitialize()
 
-func _process(delta: float) -> void:
-	if _running:
-		elapsed_time += delta
-		_update_display()
+func _process(_delta: float) -> void:
+	_update_display()
 
 func stop() -> void:
-	_running = false
+	GlobalTimeDisplay.singleton.stop()
 
 func resume() -> void:
-	_running = true
+	GlobalTimeDisplay.singleton.resume()
 
 func reinitialize() -> void:
-	elapsed_time = 0.0
-	_running = true
+	GlobalTimeDisplay.singleton.reinitialize()
 	_update_display()
 
 func _update_display() -> void:
-	var minutes := int(elapsed_time) / 60
-	var seconds := int(elapsed_time) % 60
-	var milliseconds := int(fmod(elapsed_time, 1.0) * 100)
+	var t := GlobalTimeDisplay.singleton.elapsed_time
+	var minutes := floori(t / 60.0)
+	var seconds := floori(t) % 60
+	var milliseconds := int(fmod(t, 1.0) * 100)
 	text = "%02d:%02d.%02d" % [minutes, seconds, milliseconds]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cd24ycnt7bx5v" path="res://src/win-screen/win_screen.png" id="2_s8csp"]
 [ext_resource type="Script" uid="uid://dpo0qgibgkc13" path="res://src/in-game-ui/game_paused_ui_controller.gd" id="3_1kuhc"]
 [ext_resource type="Theme" uid="uid://d0a3gnjaubqx" path="res://resources/graphics/themes/main-theme/main_ui_theme.tres" id="4_5d3vc"]
+[ext_resource type="Script" uid="uid://ce340vc1snfcv" path="res://src/win-screen/time_display.gd" id="5_5d3vc"]
 
 [node name="WinScreen" type="Node2D" unique_id=1234567890]
 script = ExtResource("1_winscrn")
@@ -129,3 +130,18 @@ text = "Continue"
 [node name="MainMenu" type="Button" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=688453420]
 layout_mode = 2
 text = "Main menu"
+
+[node name="TimeDisplay" type="RichTextLabel" parent="." unique_id=1215390477]
+anchors_preset = -1
+anchor_left = 2.4
+anchor_top = 0.625
+anchor_right = 9.525001
+anchor_bottom = 2.5500002
+offset_left = 89.0
+offset_top = 282.0
+offset_right = 413.0
+offset_bottom = 353.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+script = ExtResource("5_5d3vc")
