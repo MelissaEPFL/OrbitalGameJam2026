@@ -42,7 +42,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iojak")
 shape = SubResource("ConcavePolygonShape3D_v1ncx")
 
 [node name="Bosse" type="MeshInstance3D" parent="." unique_id=155372569]
-transform = Transform3D(0.23836178, -1.1191146, -3.2176838, 11.218752, 0.08825453, 0, 0.3925145, -1.8428657, 1.9539987, 0.06511402, 39.274723, -58.30346)
+transform = Transform3D(-1.5600555, 0.015919946, -6.635434, 10.801735, 0.5154648, -0.8922476, 2.6450424, -2.0956483, -0.26987192, 11.947394, 38.71295, -45.029877)
 mesh = ExtResource("2_76wen")
 surface_material_override/0 = SubResource("StandardMaterial3D_v1ncx")
 
@@ -52,7 +52,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_v1ncx")
 shape = SubResource("ConcavePolygonShape3D_eemos")
 
 [node name="Tournant" type="MeshInstance3D" parent="." unique_id=163513334]
-transform = Transform3D(1.4023482, 0.4391334, -3.5502434, 1.5130347, 2.5436082, 1.0484391, 3.6974566, -1.2074218, 0.91748255, -3.5850577, 24.635744, -73.987045)
+transform = Transform3D(1.4025497, 0.43919653, -3.5507538, 1.5132523, 2.543974, 1.0485898, 3.6979883, -1.2075953, 0.91761446, -3.586331, 24.636642, -73.98979)
 mesh = ExtResource("3_3lp3l")
 surface_material_override/0 = SubResource("StandardMaterial3D_v1ncx")
 
@@ -62,7 +62,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_v1ncx")
 shape = SubResource("ConcavePolygonShape3D_bel1h")
 
 [node name="SnowparkNul" type="MeshInstance3D" parent="." unique_id=386744866]
-transform = Transform3D(-0.9822774, -0.18552458, -0.026676772, -0.1857232, 0.94423085, 0.27190956, -0.025256874, 0.27204514, -0.961953, 11.216477, 17.227396, -60.25155)
+transform = Transform3D(-3.644617, -0.38634038, -0.030586006, -0.68910265, 1.9662867, 0.31175542, -0.093712464, 0.5665126, -1.1029184, 11.217333, 17.22723, -60.252323)
 mesh = ExtResource("4_iojak")
 surface_material_override/0 = SubResource("StandardMaterial3D_v1ncx")
 
@@ -72,7 +72,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_v1ncx")
 shape = SubResource("ConcavePolygonShape3D_mb56s")
 
 [node name="PenteTest3" type="MeshInstance3D" parent="." unique_id=144301152]
-transform = Transform3D(0.02391811, 0, 0, 0, 0.07041223, -0.04437766, 0, 0.016823916, 0.18573141, 13.384771, -7.6212387, -26.915234)
+transform = Transform3D(0.04033264, 0, 0, 0, 0.061380163, -0.020532789, 0, 0.014665842, 0.085934766, 13.385937, -3.2133608, -45.374916)
 mesh = ExtResource("1_eemos")
 surface_material_override/0 = SubResource("StandardMaterial3D_v1ncx")
 
