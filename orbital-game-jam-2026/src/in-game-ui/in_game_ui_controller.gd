@@ -4,6 +4,9 @@ class_name InGameUIController extends CanvasLayer
 @onready var pause_menu: CanvasLayer = $"../GamePausedController"
 @onready var world: Node3D = $"../world"
 
+
+
+
 var is_paused: bool = false:
 	set(value):
 		is_paused = value
@@ -22,3 +25,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_released("pause_game"):
 		is_paused = !is_paused
+		
+	if Input.is_key_pressed(KEY_SPACE):
+		ModulManager.singleton.load_module("game3d")
+		print ("hello")
+		return
