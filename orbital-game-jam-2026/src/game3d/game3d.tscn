@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://c5ut21h627lm2" path="res://src/game3d/success_control.gd" id="8_u8t0b"]
 [ext_resource type="ArrayMesh" uid="uid://buipmoxl4d5es" path="res://Assets/pente-test-2.obj" id="13_sxujl"]
 [ext_resource type="Texture2D" uid="uid://cnoh1moml2p0d" path="res://resources/graphics/textures/moon.jpg" id="14_sxujl"]
+[ext_resource type="PackedScene" uid="uid://cnatxj2v7yi5n" path="res://Assets/level_design_romain/level_design_romain.tscn" id="15_ech4n"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ech4n"]
 panorama = ExtResource("6_2wa5x")
@@ -72,7 +73,7 @@ theme_override_font_sizes/normal_font_size = 32
 script = ExtResource("4_u4neb")
 
 [node name="KiwiBall" parent="world" unique_id=355434633 instance=ExtResource("4_pgxoy")]
-transform = Transform3D(-1, 0, -8.940698e-08, 0, 1, 0, 8.940698e-08, 0, -1, -0.040315267, 2.3955088, -2.845636)
+transform = Transform3D(-1, 0, -8.940698e-08, 0, 1, 0, 8.940698e-08, 0, -1, 52.931976, 142.50705, -266.7445)
 script = null
 
 [node name="Simple light" type="Node3D" parent="world" unique_id=921702843]
@@ -213,6 +214,7 @@ layout_mode = 2
 text = "Main menu"
 
 [node name="Map" type="Node3D" parent="." unique_id=97449379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -69.22513, -735.34033)
 
 [node name="GrossePenteDepart" type="MeshInstance3D" parent="Map" unique_id=1149957361]
 transform = Transform3D(1, 0, 0, 0, 0.98851764, 0.15110554, 0, -0.15110554, 0.98851764, -0.38210678, -251.20613, 167.56578)
@@ -224,5 +226,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ech4n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/GrossePenteDepart/StaticBody3D" unique_id=200988136]
 shape = SubResource("ConcavePolygonShape3D_km4ey")
+
+[node name="LevelDesignRomain" parent="." unique_id=1063426920 instance=ExtResource("15_ech4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.03119, -153.77866, 204.1177)
 
 [connection signal="player_won" from="world/SuccessArea" to="world/SuccessControl" method="on_success"]
