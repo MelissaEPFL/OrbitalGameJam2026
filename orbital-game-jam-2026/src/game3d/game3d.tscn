@@ -149,7 +149,7 @@ transform = Transform3D(1, 2.9802322e-08, 2.9802322e-08, 2.9802322e-08, 1, -2.98
 shadow_enabled = true
 
 [node name="SuccessArea" parent="world" unique_id=532668572 instance=ExtResource("7_su3uc")]
-transform = Transform3D(7.9626117, 0, 0, 0, 1, 0, 0, 0, 7.9626117, 71.58705, -358.02277, 426.42178)
+transform = Transform3D(7.9626117, 0, 0, 0, 1, 0, 0, 0, 7.9626117, 71.58705, -363.2758, 447.06155)
 
 [node name="SuccessControl" type="Node" parent="world" unique_id=1560993560]
 script = ExtResource("8_u8t0b")
@@ -285,7 +285,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -69.22513, -735.34033)
 transform = Transform3D(1.0015076, 0, 0, 0, 1.0015076, 0, 0, 0, 1.0015076, 50.03119, -84.55353, 939.458)
 
 [node name="Pente1CheeseForm" type="MeshInstance3D" parent="Map" unique_id=1364384730]
-transform = Transform3D(-0.99924415, 0, -0.038876146, -0.0049720868, 0.9917877, 0.12779884, 0.038556896, 0.12789555, -0.99103796, 72.78511, -264.84943, 1102.7064)
+transform = Transform3D(-0.99924415, 0, -0.038876146, -0.0049720868, 0.9917877, 0.12779884, 0.038556896, 0.12789555, -0.99103796, 73.728645, -272.04315, 1126.2316)
 mesh = ExtResource("16_b3jln")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_qx5cs")
@@ -296,7 +296,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_qx5cs")
 shape = SubResource("ConcavePolygonShape3D_b0ws1")
 
 [node name="Pente cool sara" type="MeshInstance3D" parent="Map" unique_id=1742878303]
-transform = Transform3D(-0.9995005, 0, -0.031602755, -0.012362395, 0.9203138, 0.39098555, 0.029084451, 0.39118093, -0.9198541, 72.15245, -185.44417, 987.7478)
+transform = Transform3D(-0.9995005, 0, -0.031602755, -0.012362395, 0.9203138, 0.39098555, 0.029084451, 0.39118093, -0.9198541, 72.919464, -198.73064, 1008.45905)
 mesh = ExtResource("17_qx5cs")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_qx5cs")
