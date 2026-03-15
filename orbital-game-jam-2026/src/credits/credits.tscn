@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://dfugf4dymnovm" path="res://src/credits/credits_controls.gd" id="2_w4msl"]
 [ext_resource type="Theme" uid="uid://d0a3gnjaubqx" path="res://resources/graphics/themes/main-theme/main_ui_theme.tres" id="3_0p4li"]
 [ext_resource type="Script" uid="uid://cm6x2kltvah6f" path="res://src/credits/credit_field.gd" id="3_s8s1a"]
-[ext_resource type="Resource" uid="uid://ch8cdj4j4f7fr" path="res://src/credits/credit-fields/sara.tres" id="4_mlmk4"]
-[ext_resource type="Resource" uid="uid://x3v428uodf3m" path="res://src/credits/credit-fields/mel.tres" id="5_1ke0u"]
-[ext_resource type="Resource" uid="uid://d0xl86rmlp44w" path="res://src/credits/credit-fields/romain.tres" id="6_s6nne"]
+[ext_resource type="Resource" uid="uid://ch8cdj4j4f7fr" path="res://src/credits/credit-fields/github_template.tres" id="4_mlmk4"]
+[ext_resource type="Resource" uid="uid://x3v428uodf3m" path="res://src/credits/credit-fields/menu_background.tres" id="5_1ke0u"]
+[ext_resource type="Resource" uid="uid://d0xl86rmlp44w" path="res://src/credits/credit-fields/music.tres" id="6_s6nne"]
 
 [node name="Credits" type="Node2D" unique_id=724303317]
 script = ExtResource("1_4l73t")
