@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cs4f2lgh7mgbu" path="res://src/game3d/sucess_area/success_area.tscn" id="7_su3uc"]
 [ext_resource type="Script" uid="uid://cmodcxa18j7ps" path="res://src/game3d/time_display.gd" id="8_pgxoy"]
 [ext_resource type="Script" uid="uid://c5ut21h627lm2" path="res://src/game3d/success_control.gd" id="8_u8t0b"]
-[ext_resource type="Script" path="res://src/game3d/death_control.gd" id="9_fthx8"]
+[ext_resource type="Script" uid="uid://b6ogjo5fysv8v" path="res://src/game3d/death_control.gd" id="9_fthx8"]
 [ext_resource type="Texture2D" uid="uid://cnoh1moml2p0d" path="res://resources/graphics/textures/moon.jpg" id="14_sxujl"]
 [ext_resource type="PackedScene" uid="uid://cnatxj2v7yi5n" path="res://Assets/level_design_romain/level_design_romain.tscn" id="15_ech4n"]
 [ext_resource type="ArrayMesh" uid="uid://dhfxdmmvyfmfs" path="res://Assets/better-ground/pente1-cheese-form.obj" id="16_b3jln"]
@@ -587,7 +587,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_thwwe")
 shape = SubResource("ConcavePolygonShape3D_5537e")
 
 [node name="GameOverPlane3" parent="Map/Mel" unique_id=191893781 instance=ExtResource("24_qx5cs")]
-transform = Transform3D(49.767624, 0, 0, 0, 3.2390718, -105.690605, 0, 1.8536081, 184.68814, 61.514977, -92.14722, 637.8609)
+transform = Transform3D(124.16131, 0, 0, 0, 3.2390718, -105.690605, 0, 1.8536081, 184.68814, 61.514977, -92.14722, 637.8609)
 
 [node name="Saut14" type="MeshInstance3D" parent="Map/Mel" unique_id=565411961]
 transform = Transform3D(-4.2877245, -4.2521386, -0.01735562, -1.6066904, 7.5171833, 7.322927, -1.1425005, 5.3866234, -10.233044, 112.91451, 123.16063, 616.9116)
@@ -623,3 +623,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_thwwe")
 shape = SubResource("ConcavePolygonShape3D_5537e")
 
 [connection signal="player_won" from="world/SuccessArea" to="world/SuccessControl" method="on_success"]
+[connection signal="game_over" from="Map/Mel/GameOverPlane3" to="world/DeathControl" method="on_death"]
