@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://da0xnfi2i7ixy" path="res://src/module/module.gd" id="1_losscn"]
 [ext_resource type="Texture2D" uid="uid://clr6i66bh05vh" path="res://src/lose-screen/loose_screen.png" id="2_dk8y5"]
+[ext_resource type="Script" uid="uid://dpo0qgibgkc13" path="res://src/in-game-ui/game_paused_ui_controller.gd" id="3_1f83v"]
+[ext_resource type="Theme" uid="uid://d0a3gnjaubqx" path="res://resources/graphics/themes/main-theme/main_ui_theme.tres" id="4_102fn"]
 
 [node name="LoseScreen" type="Node2D" unique_id=987654321]
 script = ExtResource("1_losscn")
@@ -23,3 +25,107 @@ offset_right = 138.43994
 offset_bottom = 194.95996
 texture = ExtResource("2_dk8y5")
 expand_mode = 1
+
+[node name="GamePausedController" type="CanvasLayer" parent="." unique_id=94906808]
+script = ExtResource("3_1f83v")
+metadata/_custom_type_script = "uid://dpo0qgibgkc13"
+
+[node name="Control" type="Control" parent="GamePausedController" unique_id=1658270147]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_102fn")
+
+[node name="ColorRect" type="ColorRect" parent="GamePausedController/Control" unique_id=194039457]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7372549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GamePausedController/Control" unique_id=759820853]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.5
+offset_top = 542.0
+offset_right = 92.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GamePausedController/Control/VBoxContainer" unique_id=1604797826]
+layout_mode = 2
+theme = ExtResource("4_102fn")
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Title" type="Label" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=520462171]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Body" type="HBoxContainer" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=278510211]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Labels" type="VBoxContainer" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body" unique_id=838661048]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Labels" unique_id=596184437]
+layout_mode = 2
+text = "Fullscreen:"
+
+[node name="Label2" type="Label" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Labels" unique_id=265295830]
+layout_mode = 2
+text = "Music volume: "
+
+[node name="Label3" type="Label" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Labels" unique_id=1892083350]
+layout_mode = 2
+text = "Sfx volume: "
+
+[node name="Fields" type="VBoxContainer" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body" unique_id=1600719506]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Fullscreen" type="CheckBox" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Fields" unique_id=1447674933]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="MusicVolume" type="HSlider" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Fields" unique_id=51017179]
+layout_mode = 2
+size_flags_vertical = 10
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="SfxVolume" type="HSlider" parent="GamePausedController/Control/VBoxContainer/VBoxContainer/Body/Fields" unique_id=1600697016]
+layout_mode = 2
+size_flags_vertical = 10
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="Continue" type="Button" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=1807361132]
+visible = false
+layout_mode = 2
+text = "Continue"
+
+[node name="MainMenu" type="Button" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=1358466659]
+layout_mode = 2
+text = "Main menu"

@@ -12,17 +12,19 @@
 [ext_resource type="PackedScene" uid="uid://cs4f2lgh7mgbu" path="res://src/game3d/sucess_area/success_area.tscn" id="7_su3uc"]
 [ext_resource type="Script" uid="uid://cmodcxa18j7ps" path="res://src/game3d/time_display.gd" id="8_pgxoy"]
 [ext_resource type="Script" uid="uid://c5ut21h627lm2" path="res://src/game3d/success_control.gd" id="8_u8t0b"]
+[ext_resource type="Script" uid="uid://b6ogjo5fysv8v" path="res://src/game3d/death_control.gd" id="9_fthx8"]
 [ext_resource type="ArrayMesh" uid="uid://buipmoxl4d5es" path="res://Assets/pente-test-2.obj" id="13_sxujl"]
 [ext_resource type="Texture2D" uid="uid://cnoh1moml2p0d" path="res://resources/graphics/textures/moon.jpg" id="14_sxujl"]
 [ext_resource type="PackedScene" uid="uid://cnatxj2v7yi5n" path="res://Assets/level_design_romain/level_design_romain.tscn" id="15_ech4n"]
 [ext_resource type="ArrayMesh" uid="uid://dhfxdmmvyfmfs" path="res://Assets/better-ground/pente1-cheese-form.obj" id="16_b3jln"]
 [ext_resource type="ArrayMesh" uid="uid://djlosd20k71t6" path="res://Assets/better-ground/pente1-norm.obj" id="17_qx5cs"]
 [ext_resource type="ArrayMesh" uid="uid://x2eu7363mutv" path="res://Assets/better-ground/depart-norm.obj" id="18_fthx8"]
-[ext_resource type="ArrayMesh" uid="uid://dxirannuf7vo0" path="res://Assets/ground/bosse.obj" id="19_thwwe"]
+[ext_resource type="ArrayMesh" uid="uid://cos7nflexhux3" path="res://Assets/ground/bosse.obj" id="19_thwwe"]
 [ext_resource type="ArrayMesh" uid="uid://byhrgxako5s13" path="res://Assets/ground/cratere1.obj" id="20_ynt0y"]
 [ext_resource type="ArrayMesh" uid="uid://bqrcu3n7xrmsf" path="res://Assets/ground/cratere2.obj" id="21_ojsbx"]
-[ext_resource type="ArrayMesh" uid="uid://dd77uwnc6quo1" path="res://Assets/ground/tournant.obj" id="22_i8stm"]
-[ext_resource type="ArrayMesh" uid="uid://idar8ujsrddt" path="res://Assets/ground/saut.obj" id="23_5537e"]
+[ext_resource type="ArrayMesh" uid="uid://cc7lqanuipy5q" path="res://Assets/ground/tournant.obj" id="22_i8stm"]
+[ext_resource type="ArrayMesh" uid="uid://0s28eeh1d8iw" path="res://Assets/ground/saut.obj" id="23_5537e"]
+[ext_resource type="PackedScene" uid="uid://dgamov3r2x5n1" path="res://Assets/game_over_plane/game_over_plane.tscn" id="24_qx5cs"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ech4n"]
 panorama = ExtResource("6_2wa5x")
@@ -126,6 +128,9 @@ transform = Transform3D(2.524705, 0, 0, 0, 1, 0, 0, 0, 2.524705, 61.45521, -352.
 
 [node name="SuccessControl" type="Node" parent="world" unique_id=1560993560]
 script = ExtResource("8_u8t0b")
+
+[node name="DeathControl" type="Node" parent="world" unique_id=714739197]
+script = ExtResource("9_fthx8")
 
 [node name="InGameUIController" type="CanvasLayer" parent="." unique_id=1554391937]
 script = ExtResource("1_xypr8")
@@ -263,7 +268,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ech4n")
 shape = SubResource("ConcavePolygonShape3D_km4ey")
 
 [node name="LevelDesignRomain" parent="." unique_id=1063426920 instance=ExtResource("15_ech4n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.03119, -153.77866, 204.1177)
+transform = Transform3D(1.0015076, 0, 0, 0, 1.0015076, 0, 0, 0, 1.0015076, 50.03119, -153.77866, 204.1177)
 
 [node name="Pente1CheeseForm" type="MeshInstance3D" parent="." unique_id=1364384730]
 transform = Transform3D(-0.99924415, 0, -0.038876146, -0.0049720868, 0.9917877, 0.12779884, 0.038556896, 0.12789555, -0.99103796, 70.82789, -307.54636, 320.06348)
@@ -404,4 +409,8 @@ mesh = ExtResource("19_thwwe")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bosse/StaticBody3D" unique_id=910751406]
 shape = SubResource("ConcavePolygonShape3D_apin5")
 
+[node name="GameOverPlane" parent="." unique_id=2016233498 instance=ExtResource("24_qx5cs")]
+transform = Transform3D(1, 0, 0, 0, -0.0038073375, 2.0201688, 0, -0.9960933, -0.0077216304, 52.3341, -114.887436, 137.17793)
+
 [connection signal="player_won" from="world/SuccessArea" to="world/SuccessControl" method="on_success"]
+[connection signal="game_over" from="GameOverPlane" to="world/DeathControl" method="on_death"]
