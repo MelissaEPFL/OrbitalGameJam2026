@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://deetnautgtc8f" path="res://src/audio/global_music.gd" id="3_okx7f"]
 [ext_resource type="Resource" uid="uid://c7f7n315qu4kh" path="res://src/intro/Intro.tres" id="4_fyndt"]
 [ext_resource type="Resource" uid="uid://d36rkclnctpgj" path="res://src/main-menu/main_menu.tres" id="5_kmhfv"]
+[ext_resource type="AudioStream" uid="uid://bexwgyek8m37b" path="res://Assets/sounds/kiwi_death.mp3" id="5_okx7f"]
+[ext_resource type="AudioStream" uid="uid://8hahm357cwj4" path="res://Assets/sounds/kiwi_win.mp3" id="5_sta5p"]
 [ext_resource type="Resource" uid="uid://batjp8ux5d7vp" path="res://src/settings-menu/settings_menu.tres" id="6_kmhfv"]
 [ext_resource type="Resource" uid="uid://6uv2sleonprr" path="res://src/credits/credits.tres" id="7_5mrjc"]
 [ext_resource type="Resource" uid="uid://doia7y6nbfc0a" path="res://src/game/game.tres" id="7_rlaii"]
@@ -14,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://thl7i6uugsy" path="res://resources/audio/sfx/plop.wav" id="10_tb146"]
 [ext_resource type="Script" uid="uid://bc6k7x63oamaq" path="res://src/debug/debug-properties/fps_counter.gd" id="11_uewes"]
 [ext_resource type="Resource" uid="uid://yio8uxrryuwm" path="res://src/game3d/game3d.tres" id="12_e7lu8"]
+[ext_resource type="Resource" uid="uid://cwinscrntr001" path="res://src/win-screen/win_screen.tres" id="15_winscr"]
+[ext_resource type="Resource" uid="uid://closescrntr01" path="res://src/lose-screen/lose_screen.tres" id="16_losscr"]
 [ext_resource type="Script" uid="uid://wqpsii52wp4h" path="res://src/debug/debug_environment_label.gd" id="12_srxbw"]
 [ext_resource type="AudioStream" uid="uid://bmiwh46xuqf7y" path="res://resources/audio/music/zombie_main_music_placeholder_by_haeldb.ogg" id="13_okx7f"]
 [ext_resource type="Script" uid="uid://qxmah1buto32" path="res://src/debug/debug_current_modul.gd" id="14_d3u4l"]
@@ -33,10 +37,17 @@ metadata/_custom_type_script = "uid://kaqllehf0y7c"
 [node name="UiPlop" type="AudioStreamPlayer" parent="GlobalSound" unique_id=1701739013]
 stream = ExtResource("10_tb146")
 
+[node name="KiwiWin" type="AudioStreamPlayer" parent="GlobalSound" unique_id=1040167229]
+stream = ExtResource("5_sta5p")
+volume_db = 14.596
+
+[node name="KiwiDeath" type="AudioStreamPlayer" parent="GlobalSound" unique_id=755811595]
+stream = ExtResource("5_okx7f")
+
 [node name="ModulManager" type="Node" parent="." unique_id=1966766302]
 script = ExtResource("1_gh0ne")
 inital_module = ExtResource("4_fyndt")
-modules = Array[ExtResource("2_5q4o7")]([ExtResource("4_fyndt"), ExtResource("5_kmhfv"), ExtResource("6_kmhfv"), ExtResource("7_5mrjc"), ExtResource("7_rlaii"), ExtResource("12_e7lu8")])
+modules = Array[ExtResource("2_5q4o7")]([ExtResource("4_fyndt"), ExtResource("5_kmhfv"), ExtResource("6_kmhfv"), ExtResource("7_5mrjc"), ExtResource("7_rlaii"), ExtResource("12_e7lu8"), ExtResource("15_winscr"), ExtResource("16_losscr")])
 metadata/_custom_type_script = "uid://capbdq5tj44gi"
 
 [node name="ModuleRoot" type="Node" parent="ModulManager" unique_id=370113605]

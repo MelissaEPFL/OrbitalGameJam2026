@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModuleInfo" format=3 uid="uid://cwinscrntr001"]
+
+[ext_resource type="Script" uid="uid://cvji2ctgpxin" path="res://src/module/module_info.gd" id="1_winscrn"]
+[ext_resource type="PackedScene" uid="uid://cwinscrntscn1" path="res://src/win-screen/win_screen.tscn" id="2_winscrn"]
+
+[resource]
+script = ExtResource("1_winscrn")
+id = "win-screen"
+scene = ExtResource("2_winscrn")
+metadata/_custom_type_script = "uid://cvji2ctgpxin"

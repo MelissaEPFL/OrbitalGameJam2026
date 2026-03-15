@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://closescrntsn1"]
+
+[ext_resource type="Script" uid="uid://da0xnfi2i7ixy" path="res://src/module/module.gd" id="1_losscn"]
+[ext_resource type="Texture2D" uid="uid://clr6i66bh05vh" path="res://src/lose-screen/loose_screen.png" id="2_dk8y5"]
+
+[node name="LoseScreen" type="Node2D" unique_id=987654321]
+script = ExtResource("1_losscn")
+metadata/_custom_type_script = "uid://da0xnfi2i7ixy"
+
+[node name="Control" type="Control" parent="." unique_id=91974065]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="image" type="TextureRect" parent="Control" unique_id=747077602]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 22.139002
+anchor_bottom = 13.126
+offset_right = 138.43994
+offset_bottom = 194.95996
+texture = ExtResource("2_dk8y5")
+expand_mode = 1

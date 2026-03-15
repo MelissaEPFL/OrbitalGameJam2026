@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModuleInfo" format=3 uid="uid://closescrntr01"]
+
+[ext_resource type="Script" uid="uid://cvji2ctgpxin" path="res://src/module/module_info.gd" id="1_losscn"]
+[ext_resource type="PackedScene" uid="uid://closescrntsn1" path="res://src/lose-screen/lose_screen.tscn" id="2_losscn"]
+
+[resource]
+script = ExtResource("1_losscn")
+id = "lose-screen"
+scene = ExtResource("2_losscn")
+metadata/_custom_type_script = "uid://cvji2ctgpxin"
