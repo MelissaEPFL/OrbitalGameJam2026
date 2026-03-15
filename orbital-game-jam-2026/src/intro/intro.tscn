@@ -86,17 +86,3 @@ layout_mode = 2
 texture = ExtResource("5_yxki3")
 expand_mode = 5
 stretch_mode = 5
-
-[node name="template" type="Label" parent="CanvasLayer/Control" unique_id=2073307891]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -24.0
-offset_right = 257.0
-offset_bottom = -8.0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 12
-text = "based on a saturn91.dev template"
-vertical_alignment = 2
