@@ -7,22 +7,23 @@
 [ext_resource type="Script" uid="uid://dpo0qgibgkc13" path="res://src/in-game-ui/game_paused_ui_controller.gd" id="4_hremh"]
 [ext_resource type="PackedScene" uid="uid://b3ni2gn6eo833" path="res://Character/kiwi_ball.tscn" id="4_pgxoy"]
 [ext_resource type="Script" uid="uid://b0qet46itky0d" path="res://src/game3d/elasticity_display.gd" id="4_u4neb"]
+[ext_resource type="Script" uid="uid://cex3llfhbih5q" path="res://src/game3d/controls_display.gd" id="5_fthx8"]
 [ext_resource type="Texture2D" uid="uid://cpriknobqvo4d" path="res://resources/graphics/textures/sky_box.jpg" id="6_2wa5x"]
 [ext_resource type="Script" uid="uid://bg68v8ap5va60" path="res://src/in-game-ui/hud_controller.gd" id="7_gb3wb"]
 [ext_resource type="PackedScene" uid="uid://cs4f2lgh7mgbu" path="res://src/game3d/sucess_area/success_area.tscn" id="7_su3uc"]
 [ext_resource type="Script" uid="uid://cmodcxa18j7ps" path="res://src/game3d/time_display.gd" id="8_pgxoy"]
 [ext_resource type="Script" uid="uid://c5ut21h627lm2" path="res://src/game3d/success_control.gd" id="8_u8t0b"]
-[ext_resource type="Script" uid="uid://b6ogjo5fysv8v" path="res://src/game3d/death_control.gd" id="9_fthx8"]
+[ext_resource type="Script" path="res://src/game3d/death_control.gd" id="9_fthx8"]
 [ext_resource type="Texture2D" uid="uid://cnoh1moml2p0d" path="res://resources/graphics/textures/moon.jpg" id="14_sxujl"]
 [ext_resource type="PackedScene" uid="uid://cnatxj2v7yi5n" path="res://Assets/level_design_romain/level_design_romain.tscn" id="15_ech4n"]
 [ext_resource type="ArrayMesh" uid="uid://dhfxdmmvyfmfs" path="res://Assets/better-ground/pente1-cheese-form.obj" id="16_b3jln"]
 [ext_resource type="ArrayMesh" uid="uid://djlosd20k71t6" path="res://Assets/better-ground/pente1-norm.obj" id="17_qx5cs"]
 [ext_resource type="ArrayMesh" uid="uid://x2eu7363mutv" path="res://Assets/better-ground/depart-norm.obj" id="18_fthx8"]
-[ext_resource type="ArrayMesh" uid="uid://cos7nflexhux3" path="res://Assets/ground/bosse.obj" id="19_thwwe"]
+[ext_resource type="ArrayMesh" uid="uid://dxirannuf7vo0" path="res://Assets/ground/bosse.obj" id="19_thwwe"]
 [ext_resource type="ArrayMesh" uid="uid://byhrgxako5s13" path="res://Assets/ground/cratere1.obj" id="20_ynt0y"]
 [ext_resource type="ArrayMesh" uid="uid://bqrcu3n7xrmsf" path="res://Assets/ground/cratere2.obj" id="21_ojsbx"]
-[ext_resource type="ArrayMesh" uid="uid://cc7lqanuipy5q" path="res://Assets/ground/tournant.obj" id="22_i8stm"]
-[ext_resource type="ArrayMesh" uid="uid://0s28eeh1d8iw" path="res://Assets/ground/saut.obj" id="23_5537e"]
+[ext_resource type="ArrayMesh" uid="uid://dd77uwnc6quo1" path="res://Assets/ground/tournant.obj" id="22_i8stm"]
+[ext_resource type="ArrayMesh" uid="uid://idar8ujsrddt" path="res://Assets/ground/saut.obj" id="23_5537e"]
 [ext_resource type="PackedScene" uid="uid://dgamov3r2x5n1" path="res://Assets/game_over_plane/game_over_plane.tscn" id="24_qx5cs"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ech4n"]
@@ -98,7 +99,7 @@ data = PackedVector3Array(-2.7071, 0.152, 1.3226, -2.7071, 0.2538, 1.3429999, 2.
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2jmcl"]
 data = PackedVector3Array(-2.7071, 0.152, 1.3226, -2.7071, 0.2538, 1.3429999, 2.1272, 0.152, 1.3226, 2.1272, 0.152, 1.3226, -2.7071, 0.2538, 1.3429999, 2.1272, 0.2538, 1.3429999, 2.1272, 0.152, 1.3226, 2.1272, 0.2538, 1.3429999, 2.1272, 0.2859, -2.8088999, 2.1272, 0.152, 1.3226, 2.1272, 0.2859, -2.8088999, 2.1272, -0.0149, 1.2889999, 2.1272, -0.0149, 1.2889999, 2.1272, 0.2859, -2.8088999, 2.1272, 0.1082, -2.8223999, 2.1272, 0.2859, -2.8088999, 2.1272, 0.2538, 1.3429999, 2.1272, 0.3274, -1.4128, 2.1272, 0.2538, 1.3429999, 2.1272, 0.4797, 1.3873, 2.1272, 0.3274, -1.4128, 2.1272, 0.3274, -1.4128, 2.1272, 0.4797, 1.3873, 2.1272, 0.5176, -0.704, 2.1272, 0.4797, 1.3873, 2.1272, 0.8318, 1.4524, 2.1272, 0.5176, -0.704, 2.1272, 0.5176, -0.704, 2.1272, 0.8318, 1.4524, 2.1272, 0.8289, -0.049, 2.1272, 0.8318, 1.4524, 2.1272, 1.2743, 1.527, 2.1272, 0.8289, -0.049, 2.1272, 0.8289, -0.049, 2.1272, 1.2743, 1.527, 2.1272, 1.2649, 0.5455, 2.1272, 1.2743, 1.527, 2.1272, 1.8379999, 1.5998, 2.1272, 1.2649, 0.5455, 2.1272, 1.2649, 0.5455, 2.1272, 1.8379999, 1.5998, 2.1272, 1.8345, 0.92359996, 2.1272, 2.5444, 1.6367999, 2.1272, 1.8345, 0.92359996, 2.1272, 1.8379999, 1.5998, 2.1272, 2.4564, 1.1169, 2.1272, 1.8345, 0.92359996, 2.1272, 2.5444, 1.6367999, -2.7071, 2.5444, 1.6367999, -2.7071, 2.4564, 1.1169, 2.1272, 2.5444, 1.6367999, 2.1272, 2.5444, 1.6367999, -2.7071, 2.4564, 1.1169, 2.1272, 2.4564, 1.1169, -2.7071, 2.4564, 1.1169, -2.7071, 1.8345, 0.92359996, 2.1272, 2.4564, 1.1169, 2.1272, 2.4564, 1.1169, -2.7071, 1.8345, 0.92359996, 2.1272, 1.8345, 0.92359996, -2.7071, 1.8379999, 1.5998, -2.7071, 2.5444, 1.6367999, 2.1272, 1.8379999, 1.5998, 2.1272, 1.8379999, 1.5998, -2.7071, 2.5444, 1.6367999, 2.1272, 2.5444, 1.6367999, -2.7071, 1.8345, 0.92359996, -2.7071, 1.2649, 0.5455, 2.1272, 1.8345, 0.92359996, 2.1272, 1.8345, 0.92359996, -2.7071, 1.2649, 0.5455, 2.1272, 1.2649, 0.5455, -2.7071, 1.2743, 1.527, -2.7071, 1.8379999, 1.5998, 2.1272, 1.2743, 1.527, 2.1272, 1.2743, 1.527, -2.7071, 1.8379999, 1.5998, 2.1272, 1.8379999, 1.5998, -2.7071, 1.2649, 0.5455, -2.7071, 0.8289, -0.049, 2.1272, 1.2649, 0.5455, 2.1272, 1.2649, 0.5455, -2.7071, 0.8289, -0.049, 2.1272, 0.8289, -0.049, -2.7071, 0.8318, 1.4524, -2.7071, 1.2743, 1.527, 2.1272, 0.8318, 1.4524, 2.1272, 0.8318, 1.4524, -2.7071, 1.2743, 1.527, 2.1272, 1.2743, 1.527, -2.7071, 0.8289, -0.049, -2.7071, 0.5176, -0.704, 2.1272, 0.8289, -0.049, 2.1272, 0.8289, -0.049, -2.7071, 0.5176, -0.704, 2.1272, 0.5176, -0.704, -2.7071, 0.4797, 1.3873, -2.7071, 0.8318, 1.4524, 2.1272, 0.4797, 1.3873, 2.1272, 0.4797, 1.3873, -2.7071, 0.8318, 1.4524, 2.1272, 0.8318, 1.4524, -2.7071, 0.5176, -0.704, -2.7071, 0.3274, -1.4128, 2.1272, 0.5176, -0.704, 2.1272, 0.5176, -0.704, -2.7071, 0.3274, -1.4128, 2.1272, 0.3274, -1.4128, -2.7071, 0.2538, 1.3429999, -2.7071, 0.4797, 1.3873, 2.1272, 0.2538, 1.3429999, 2.1272, 0.2538, 1.3429999, -2.7071, 0.4797, 1.3873, 2.1272, 0.4797, 1.3873, -2.7071, 0.3274, -1.4128, -2.7071, 0.2859, -2.8088999, 2.1272, 0.3274, -1.4128, 2.1272, 0.3274, -1.4128, -2.7071, 0.2859, -2.8088999, 2.1272, 0.2859, -2.8088999, -2.7071, 1.8379999, 1.5998, -2.7071, 1.8345, 0.92359996, -2.7071, 2.5444, 1.6367999, -2.7071, 2.5444, 1.6367999, -2.7071, 1.8345, 0.92359996, -2.7071, 2.4564, 1.1169, -2.7071, 1.8345, 0.92359996, -2.7071, 1.8379999, 1.5998, -2.7071, 1.2649, 0.5455, -2.7071, 1.2649, 0.5455, -2.7071, 1.8379999, 1.5998, -2.7071, 1.2743, 1.527, -2.7071, 1.2649, 0.5455, -2.7071, 1.2743, 1.527, -2.7071, 0.8289, -0.049, -2.7071, 0.8289, -0.049, -2.7071, 1.2743, 1.527, -2.7071, 0.8318, 1.4524, -2.7071, 0.8289, -0.049, -2.7071, 0.8318, 1.4524, -2.7071, 0.5176, -0.704, -2.7071, 0.5176, -0.704, -2.7071, 0.8318, 1.4524, -2.7071, 0.4797, 1.3873, -2.7071, 0.5176, -0.704, -2.7071, 0.4797, 1.3873, -2.7071, 0.3274, -1.4128, -2.7071, 0.3274, -1.4128, -2.7071, 0.4797, 1.3873, -2.7071, 0.2538, 1.3429999, -2.7071, 0.3274, -1.4128, -2.7071, 0.2538, 1.3429999, -2.7071, 0.2859, -2.8088999, -2.7071, 0.2859, -2.8088999, -2.7071, 0.2538, 1.3429999, -2.7071, 0.152, 1.3226, -2.7071, 0.2859, -2.8088999, -2.7071, 0.152, 1.3226, -2.7071, 0.1082, -2.8223999, -2.7071, 0.1082, -2.8223999, -2.7071, 0.152, 1.3226, -2.7071, -0.0149, 1.2889999, 2.1272, 0.2859, -2.8088999, -2.7071, 0.2859, -2.8088999, 2.1272, 0.1082, -2.8223999, 2.1272, 0.1082, -2.8223999, -2.7071, 0.2859, -2.8088999, -2.7071, 0.1082, -2.8223999, -2.7071, 0.152, 1.3226, 2.1272, 0.152, 1.3226, -2.7071, -0.0149, 1.2889999, -2.7071, -0.0149, 1.2889999, 2.1272, 0.152, 1.3226, 2.1272, -0.0149, 1.2889999)
 
-[node name="Game3d" type="Node3D" unique_id=478796058]
+[node name="Game3d2" type="Node3D" unique_id=478796058]
 script = ExtResource("1_36r7m")
 
 [node name="world" type="Node3D" parent="." unique_id=1901115932]
@@ -133,6 +134,15 @@ offset_right = 397.0
 offset_bottom = 174.0
 theme_override_font_sizes/normal_font_size = 32
 script = ExtResource("4_u4neb")
+
+[node name="ControlsDisplay" type="RichTextLabel" parent="world/HudController/Control" unique_id=1357971780]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 19.0
+offset_right = 998.0
+offset_bottom = 174.0
+horizontal_alignment = 1
+script = ExtResource("5_fthx8")
 
 [node name="KiwiBall" parent="world" unique_id=355434633 instance=ExtResource("4_pgxoy")]
 transform = Transform3D(-1, 0, -8.940698e-08, 0, 1, 0, 8.940698e-08, 0, -1, 52.931976, 142.50705, -266.7445)
