@@ -2,7 +2,7 @@ extends RigidBody3D
 
 var speed = 5.0
 var elasticity = 0.5  # 0.0 = no bounce, 1.0 = super bouncy
-var bounciness = 20.0
+var bounciness = 40.0
 
 func _physics_process(delta):
 	
