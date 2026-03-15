@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cv43bju1yh022"]
+[gd_scene format=3 uid="uid://cysvy3miwewj"]
 
 [ext_resource type="Script" uid="uid://0kkt0fddb55s" path="res://src/module/module3d.gd" id="1_36r7m"]
 [ext_resource type="Script" uid="uid://tyug5shtd20o" path="res://src/in-game-ui/in_game_ui_controller.gd" id="1_xypr8"]
@@ -17,6 +17,8 @@
 [ext_resource type="ArrayMesh" uid="uid://idar8ujsrddt" path="res://Assets/ground/saut.obj" id="11_gb4m6"]
 [ext_resource type="ArrayMesh" uid="uid://dxirannuf7vo0" path="res://Assets/ground/bosse.obj" id="12_km4ey"]
 [ext_resource type="ArrayMesh" uid="uid://dd77uwnc6quo1" path="res://Assets/ground/tournant.obj" id="13_km4ey"]
+[ext_resource type="ArrayMesh" uid="uid://dhfxdmmvyfmfs" path="res://Assets/better-ground/pente1-cheese-form.obj" id="18_hyffa"]
+[ext_resource type="ArrayMesh" uid="uid://djlosd20k71t6" path="res://Assets/better-ground/pente1-norm.obj" id="19_svd02"]
 
 [sub_resource type="Environment" id="Environment_su3uc"]
 ambient_light_source = 2
@@ -78,7 +80,7 @@ theme_override_font_sizes/normal_font_size = 32
 script = ExtResource("4_u4neb")
 
 [node name="KiwiBall" parent="world" unique_id=355434633 instance=ExtResource("4_pgxoy")]
-transform = Transform3D(-1, 0, -8.940698e-08, 0, 1, 0, 8.940698e-08, 0, -1, -0.040315267, 5.382127, -2.845636)
+transform = Transform3D(-1, 0, -8.940698e-08, 0, 1, 0, 8.940698e-08, 0, -1, -0.040315267, 96.2725, -14.362991)
 script = null
 
 [node name="Simple light" type="Node3D" parent="world" unique_id=921702843]
@@ -301,5 +303,13 @@ text = "Continue"
 [node name="MainMenu" type="Button" parent="GamePausedController/Control/VBoxContainer/VBoxContainer" unique_id=2095956134]
 layout_mode = 2
 text = "Main menu"
+
+[node name="Pente1CheeseForm" type="MeshInstance3D" parent="." unique_id=1335089716]
+transform = Transform3D(-0.99924403, 0, -0.038876146, 0, 1, 0, 0.038876146, 0, -0.99924403, 13.299938, 48.209213, 59.648365)
+mesh = ExtResource("18_hyffa")
+
+[node name="Pente1Norm" type="MeshInstance3D" parent="." unique_id=2133083310]
+transform = Transform3D(-0.9995005, 0, -0.031602755, 0, 1, 0, 0.031602755, 0, -0.9995005, 11.143111, 97.97707, -54.69011)
+mesh = ExtResource("19_svd02")
 
 [connection signal="player_won" from="world/SuccessArea" to="world/SuccessControl" method="on_success"]
